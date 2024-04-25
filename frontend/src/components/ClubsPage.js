@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -21,7 +22,7 @@ function ClubsPage() {
       try {
         const response = await axios.get('/api/mastodonhub/clubs/');
         setClubs(response.data);
-        setFilteredClubs(response.data); // Default to all clubs
+        setFilteredClubs(response.data); 
       } catch (error) {
         setError(error);
         console.error('Error fetching clubs:', error);
@@ -46,7 +47,7 @@ function ClubsPage() {
       );
     }
 
-    setFilteredClubs(filtered); // Update the filtered list based on filters
+    setFilteredClubs(filtered); 
   };
 
   const handleClubsClick = (club) => {

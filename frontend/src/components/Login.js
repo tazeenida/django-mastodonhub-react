@@ -1,8 +1,6 @@
-// Import the react JS packages 
 import axios from "axios";
 import { useState } from "react";
 
-// Define the Login function.
 export const Login = () => {
      const [username, setUsername] = useState('');
      const [password, setPassword] = useState('');
@@ -15,7 +13,7 @@ const submit = async (e) => {
 
   try {
     const { data } = await axios.post(
-      'http://localhost:8000/token/',
+      '/token/',
       user,
       {
         headers: {

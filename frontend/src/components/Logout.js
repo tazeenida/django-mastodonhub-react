@@ -6,7 +6,7 @@ const Logout = () => {
         const logout = async () => {
             try {
                 await axios.post(
-                    'http://localhost:8000/logout/',
+                    '/logout/',
                     {},
                     { headers: { "Content-Type": "application/json" } }
                 );
