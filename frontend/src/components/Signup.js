@@ -8,32 +8,31 @@ const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const submit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
     
-    const user = { username, email, password }; // Prepare the user data
+    const user = { username, email, password };
 
     try {
-      // Attempt to create a new user via the API endpoint
       const response = await axios.post(
-        'http://localhost:8000/signUp/', // API endpoint for signup
+        '/signUp/',
         user,
         {
           headers: {
-            'Content-Type': 'application/json', // Ensure proper content type
+            'Content-Type': 'application/json', 
           },
-          withCredentials: true, // Include credentials for cross-origin requests
+          withCredentials: true,
         }
       );
 
-      if (response.status === 201) { // Check if the user was created successfully
+      if (response.status === 201) { 
         alert('User created successfully!');
-        window.location.href = '/login'; // Redirect to the login page
+        window.location.href = '/login';
       }
-    } catch (error) { // Handle errors
+    } catch (error) { 
       if (error.response && error.response.data) {
-        setErrorMessage(error.response.data.error); // Display specific error message
+        setErrorMessage(error.response.data.error); 
       } else {
-        setErrorMessage('An unexpected error occurred.'); // General error message
+        setErrorMessage('An unexpected error occurred.'); 
       }
     }
   };
