@@ -15,7 +15,7 @@ const submit = async (e) => {
 
   try {
     const { data } = await axios.post(
-      'http://localhost:8000/token/',
+      '/token/',
       user,
       {
         headers: {
