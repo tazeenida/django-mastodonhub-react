@@ -86,7 +86,7 @@ const SignUp = () => {
           
           {/* Display error message if signup fails */}
           {errorMessage && (
-            <div className="alert alert-danger mt-3">{errorMessage}</div> // Display error
+            <div className="alert alert-danger mt-3">{errorMessage}</div>
           )}
         </div>
       </form>
