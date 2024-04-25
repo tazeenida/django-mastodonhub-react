@@ -13,6 +13,7 @@ body {
   background-color: $body-bg-color;
   font-family: $body-font;
   color: $body-font-color;
+  margin: 0;
 }
 
 // Navigation styles
@@ -21,6 +22,7 @@ body {
 .main-nav .login-signup {
   display: flex; 
   align-items: center; 
+  padding: 10px;
 }
 
 .main-nav {
