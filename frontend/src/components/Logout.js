@@ -13,7 +13,7 @@ const Logout = () => {
                     { headers: { "Content-Type": "application/json" } }
                 );
                     localStorage.clear();
-                    window.location.href = "/";
+                     navigate("/login");
             } catch (error) {
                 console.error("Logout failed:", error);
                 alert("Logout failed. Please try again.");
