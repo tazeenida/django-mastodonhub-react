@@ -87,10 +87,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:5173']
+CSRF_TRUSTED_ORIGINS = ['https://django-mastodonhub-react-1.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',  # Allow React to connect to Django
+    'https://django-mastodonhub-react-1.onrender.com',  
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -169,7 +169,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000',
      'https://django-mastodonhub-react-1.onrender.com'
 ]
 
