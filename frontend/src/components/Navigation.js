@@ -29,9 +29,7 @@ export function Navigation() {
           <Nav className="me-auto"> 
           </Nav>
           <Nav>
-          {isAuth ? <Nav.Link href="/logout">Logout</Nav.Link> :  
-                    <Nav.Link href="/login">Login</Nav.Link>},
-                    
+          {isAuth ? <li><Link to="/logout">Logout</Link></li> : <li><Link to="/login">Login</Link></li>} 
           </Nav>
           
       </Navbar>
