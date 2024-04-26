@@ -11,50 +11,36 @@ import Logout from './components/Logout';
 import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
 
-const isLoggedIn = false;
+const App = () => {
+  const isLoggedIn = !!localStorage.getItem('access_token'); // Convert to boolean
 
-function App() {
-  const isLoggedIn = true; // example condition
-      if (!isLoggedIn) {
-
-        return <Navigate to="/login" />;
-      }
-  const isSignedUp = true; // example condition
-      if (!isSignedUp) {
-
-        return <Navigate to="/signUp" />;
-      }
   return (
     <div>
       <Router>
-        <div>
-          <Navigation/>
-          <Routes>
-          <Route path="/" element={isLoggedIn ? <Dashboard />  : <Navigate to="/Dashboard" />} />
-          <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/Dashboard" />} />
-            <Route path="/Events" element={<Events />} />
-            <Route path="/Clubs" element={<Clubs/>} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Logout" element={<Logout />} />
-            <Route path="/UserProfile" element={<UserProfile />} />
-            <Route path="/Signup" element={<Signup />} />
-            {isLoggedIn ? (
-          <>
-            <Route path="/dashboard" element={<Dashboard />} />
-          </>
-        ) : (
-          <>
-            <Route path="/Login" element={<Navigate to="/Login" />} />
-            <Route path="/signup" element={<Signup />} />
-          </>
-        )}
+        <Navigation />
+        <Routes>
+          {isLoggedIn ? (
+            <>
+              <Route path="/" element={<Dashboard />} /> {/* Root route to Dashboard */}
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/clubs" element={<Clubs />} />
+              <Route path="/userprofile" element={<UserProfile />} />
+              <Route path="/logout" element={<Logout />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Navigate to="/login" replace />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="*" element={<Navigate to="/login" replace />} /> {/* Unmatched routes */}
+            </>
+          )}
         </Routes>
-        </div>
-
+        <Footer />
       </Router>
-      <Footer/>
     </div>
   );
-}
+};
 
 export default App;
