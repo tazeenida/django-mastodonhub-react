@@ -44,7 +44,7 @@ function App() {
           </>
         ) : (
           <>
-            <Route path="/" element={<Navigate to="/Login" />} />
+            <Route path="/Login" element={<Navigate to="/Login" />} />
             <Route path="/signup" element={<Signup />} />
           </>
         )}
