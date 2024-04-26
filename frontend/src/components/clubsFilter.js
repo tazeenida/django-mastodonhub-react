@@ -10,7 +10,7 @@ function ClubsFilter({ onFilterChange }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('${backendUrl}/api/mastodonhub/clubs/');
+        const response = await axios.get(`${backendUrl}/api/mastodonhub/clubs/`);
         const categories = [...new Set(response.data.map((club) => club.Category))];
         setUniqueCategories(['All', ...categories]); // Add "All" as the first option
       } catch (error) {
@@ -23,8 +23,8 @@ function ClubsFilter({ onFilterChange }) {
 
   const handleCategoryChange = (event) => {
     const selectedCategory = event.target.value;
-    const category = selectedCategory === 'All' ? null : selectedCategory; // Use `null` to represent "All"
-    onFilterChange(category, searchTerm); // Pass the selected category and search term to the parent
+    const category = selectedCategory === 'All' ? null : selectedCategory; 
+    onFilterChange(category, searchTerm); 
   };
 
   return (

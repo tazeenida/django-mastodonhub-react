@@ -17,7 +17,7 @@ function FeaturedEvents() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get("${backendUrl}/api/mastodonhub/events/");
+        const response = await axios.get(`${backendUrl}/api/mastodonhub/events/`);
         setEvents(response.data);
       } catch (error) {
         console.error("Error fetching events:", error);

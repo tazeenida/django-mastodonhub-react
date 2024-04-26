@@ -15,7 +15,7 @@ const submit = async (e) => {
 
   try {
     const { data } = await axios.post(
-      '${backendUrl}/token/',
+      `${backendUrl}/token/`,
       user,
       {
         headers: {

@@ -22,7 +22,7 @@ function ClubsPage() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get('${backendUrl}/api/mastodonhub/clubs/');
+        const response = await axios.get(`${backendUrl}/api/mastodonhub/clubs/`);
         setClubs(response.data);
         setFilteredClubs(response.data); 
       } catch (error) {

@@ -16,7 +16,7 @@ const SignUp = () => {
 
     try {
       const response = await axios.post(
-        '${backendUrl}/signUp/',
+        `${backendUrl}/signUp/`,
         user,
         {
           headers: {
