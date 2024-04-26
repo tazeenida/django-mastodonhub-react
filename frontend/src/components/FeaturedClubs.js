@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ClubModal from './clubsModal';
 
+const backendUrl = 'https://django-mastodonhub-react-1.onrender.com';
+
 function FeaturedClubs() {
   const [FeaturedClubs, setClubs] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +17,7 @@ function FeaturedClubs() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get("/api/mastodonhub/clubs/");
+        const response = await axios.get("${backendUrl}/api/mastodonhub/clubs/");
         setClubs(response.data);
       } catch (error) {
         console.error("Error fetching clubs:", error);

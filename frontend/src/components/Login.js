@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 
+const backendUrl = 'https://django-mastodonhub-react-1.onrender.com';
+
 export const Login = () => {
      const [username, setUsername] = useState('');
      const [password, setPassword] = useState('');
@@ -13,7 +15,7 @@ const submit = async (e) => {
 
   try {
     const { data } = await axios.post(
-      '/token/',
+      '${backendUrl}/token/',
       user,
       {
         headers: {

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const backendUrl = 'https://django-mastodonhub-react-1.onrender.com';
+
 function ClubsFilter({ onFilterChange }) {
   const [uniqueCategories, setUniqueCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -8,7 +10,7 @@ function ClubsFilter({ onFilterChange }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('/api/mastodonhub/clubs/');
+        const response = await axios.get('${backendUrl}/api/mastodonhub/clubs/');
         const categories = [...new Set(response.data.map((club) => club.Category))];
         setUniqueCategories(['All', ...categories]); // Add "All" as the first option
       } catch (error) {

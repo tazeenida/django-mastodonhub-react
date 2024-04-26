@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+const backendUrl = 'https://django-mastodonhub-react-1.onrender.com';
+
 function ArtEvents() {
   const [artEvents, setArtEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +14,7 @@ function ArtEvents() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get('/api/mastodonhub/events/');
+        const response = await axios.get('${backendUrl}/api/mastodonhub/events/');
         setArtEvents(response.data);
       } catch (error) {
         console.error('Error fetching events:', error);
