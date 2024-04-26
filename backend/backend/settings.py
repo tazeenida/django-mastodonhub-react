@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a%fp7xfqd1myw7u5lgl_s3n-n+le-n881aruxwvccz6h3!ofc!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-mastodonhub-react.onrender.com']
+ALLOWED_HOSTS = ['django-mastodonhub-react-1.onrender.com']
 
 
 # Application definition
@@ -90,7 +90,7 @@ MIDDLEWARE = [
 CSRF_TRUSTED_ORIGINS = ['https://django-mastodonhub-react.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    'django-mastodonhub-react.onrender.com',  
+    'https://django-mastodonhub-react.onrender.com',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
