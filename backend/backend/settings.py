@@ -90,7 +90,7 @@ MIDDLEWARE = [
 CSRF_TRUSTED_ORIGINS = ['https://django-mastodonhub-react.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    'django-mastodonhub-react.onrender.com',  
+    'https://django-mastodonhub-react.onrender.com',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
