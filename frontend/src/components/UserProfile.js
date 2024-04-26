@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+const backendUrl = `https://django-mastodonhub-react-1.onrender.com`;
+
 const UserProfile = () => {
   const [userData, setUserData] = useState(null);
   const [editMode, setEditMode] = useState(false);
@@ -21,7 +23,7 @@ const UserProfile = () => {
       }
 
       try {
-        const response = await axios.get('/profile/', {
+        const response = await axios.get(`${backendUrl}/profile/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -64,7 +66,7 @@ const UserProfile = () => {
     }
 
     try {
-      const response = await axios.put('/profile/', userData, {
+      const response = await axios.put(`${backendUrl}/profile/`, userData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a%fp7xfqd1myw7u5lgl_s3n-n+le-n881aruxwvccz6h3!ofc!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-mastodonhub-react-1.onrender.com']
+ALLOWED_HOSTS = ['django-mastodonhub-react.onrender.com']
 
 
 # Application definition
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'authentification'
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -87,10 +87,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://django-mastodonhub-react-1.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://django-mastodonhub-react.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    'https://django-mastodonhub-react-1.onrender.com',  
+    'django-mastodonhub-react.onrender.com',  
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -169,7 +169,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-     'https://django-mastodonhub-react-1.onrender.com'
+     'https://django-mastodonhub-react.onrender.com'
 ]
 
 

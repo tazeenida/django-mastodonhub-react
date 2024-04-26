@@ -7,6 +7,8 @@ import ClubsFilter from './clubsFilter';
 import '../styles.css';
 import clubsBanner from '../images/clubsBanner.jpg'
 
+const backendUrl = 'https://django-mastodonhub-react-1.onrender.com';
+
 function ClubsPage() {
   const [clubs, setClubs] = useState([]);
   const [filteredClubs, setFilteredClubs] = useState([]);
@@ -20,7 +22,7 @@ function ClubsPage() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get('/api/mastodonhub/clubs/');
+        const response = await axios.get(`${backendUrl}/api/mastodonhub/clubs/`);
         setClubs(response.data);
         setFilteredClubs(response.data); 
       } catch (error) {

@@ -1,16 +1,13 @@
-// axiosConfig.js
 import axios from 'axios';
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
 
-// Set up your Axios instance
 const axiosInstance = axios.create({
-  baseURL: 'http://127.0.0.1:8000/', // Your API base URL
+  baseURL: 'https://django-mastodonhub-react-1.onrender.com', 
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Define the interceptor
 let refresh = false;
 
 axiosInstance.interceptors.response.use(
@@ -19,7 +16,6 @@ axiosInstance.interceptors.response.use(
     if (error.response.status === 401 && !refresh) {
       refresh = true;
 
-      // Replace with your token refresh logic
       const refreshToken = localStorage.getItem('refresh_token');
       const response = await axios.post('/token/refresh/', { token: refreshToken });
 
@@ -40,4 +36,4 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-export default axiosInstance; // Export the configured Axios instance
+export default axiosInstance;

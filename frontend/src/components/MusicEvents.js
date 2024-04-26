@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+const backendUrl = 'https://django-mastodonhub-react-1.onrender.com';
 
 function MusicEvents() {
   const [musicEvents, setEvents] = useState([]);
@@ -13,7 +14,7 @@ function MusicEvents() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await axios.get("/api/mastodonhub/events/");
+        const response = await axios.get(`${backendUrl}/api/mastodonhub/events/`);
         setEvents(response.data);
       } catch (error) {
         console.error("Error fetching events:", error);
