@@ -28,7 +28,7 @@ const SignUp = () => {
 
       if (response.status === 201) { 
         alert('User created successfully!');
-        window.location.href = '/login';
+        window.location.href = '/';
       }
     } catch (error) { 
       if (error.response && error.response.data) {
