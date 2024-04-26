@@ -1,4 +1,4 @@
-# MastodonHub Project
+# MastodonHub
 ## Overview
 At Purdue University, many clubs and events are available for students to explore. However, new students often struggle to find and engage with these opportunities, facing challenges when navigating the PFW portal. To solve this, our project aims to create a comprehensive app that streamlines club and event information, provides a Purdue events calendar. 
 
