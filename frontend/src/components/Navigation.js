@@ -23,9 +23,7 @@ export function Navigation() {
     </ul>
     <div className="login-signup">
             <Nav>
-          {isAuth ? <li><Link to="/UserProfile">Profile</Link></li> :  
-
-              <li><Link to="/Signup">Signup</Link></li>},               
+          {isAuth ? <li><Link to="/UserProfile">Profile</Link></li> : <li><Link to="/Signup">Signup</Link></li>}            
           </Nav>
           <Navbar bg="dark" variant="dark">
           <Nav className="me-auto"> 
