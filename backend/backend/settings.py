@@ -87,10 +87,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://django-mastodonhub-react.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://mastodonhub.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
-    'https://django-mastodonhub-react.onrender.com',
+    'https://mastodonhub.onrender.com',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -169,7 +169,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-     'https://django-mastodonhub-react.onrender.com'
+     'https://mastodonhub.onrender.com'
 ]
 
 
